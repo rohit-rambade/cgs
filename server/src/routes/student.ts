@@ -1,8 +1,9 @@
 import { Router } from "express";
-import { addStudentData } from "../controllers/student";
+import { addStudentData, generateCertificate } from "../controllers/student";
 
 const router: Router = Router();
 
-router.post("/add-student", addStudentData);
-
+router
+  .post("/add-student", addStudentData)
+  .post("/generate-certificate/:id", generateCertificate);
 export default router;
